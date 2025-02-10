@@ -1,0 +1,12 @@
+<div class="stories-container" *ngIf="stories.length > 0">
+  <div *ngFor="let story of stories" class="story" (click)="openStory(story)">
+    <img [src]="story.avatar" alt="{{ story.username }}" />
+    <p>{{ story.username }}</p>
+  </div>
+</div>
+
+<div class="story-modal" *ngIf="selectedStory" (click)="closeStory()">
+  <div class="story-view">
+    <img [src]="selectedStory.avatar"/>
+  </div>
+</div>

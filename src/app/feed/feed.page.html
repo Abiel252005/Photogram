@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="logo">
+      <p>Photogram</p>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="heart-outline"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="chatbubble-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" mode="ios">
+  <app-layout>
+    <app-stories ></app-stories>
+    <ion-list>
+      <app-card-post></app-card-post>
+    </ion-list>
+  </app-layout>
+</ion-content>

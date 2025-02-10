@@ -1,0 +1,93 @@
+.stories-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    background-color: white;
+    gap: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.story {
+    text-align: center;
+    max-width: 100px;
+    flex-shrink: 0;
+}
+
+.story img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    padding: 4px;
+    background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
+    border: 3px solid white;
+}
+
+.story p {
+    font-size: 14px;
+    color: #333;
+    margin-top: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.story-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.story-modal.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.story-view {
+    text-align: center;
+    animation: border-glow 2s infinite linear;
+    z-index: 1001;
+}
+
+.story-view img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.story-view p {
+    color: white;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+@keyframes border-glow {
+    0% {
+        border: 5px solid #f58529;
+    }
+
+    25% {
+        border: 5px solid #dd2a7b;
+    }
+
+    50% {
+        border: 5px solid #8134af;
+    }
+
+    100% {
+        border: 5px solid #515bd4;
+    }
+}

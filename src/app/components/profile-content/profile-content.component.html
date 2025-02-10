@@ -1,0 +1,38 @@
+
+
+<ion-content mode="ios" fullscreen="true">
+  <div class="profile-header">
+    <img [src]="user.profilePicture" class="profile-picture" />
+    <div class="profile-info">
+      <h2>{{ user.name }}</h2>
+      <p>{{ user.bio }}</p>
+    </div>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h3>{{ user.posts }}</h3>
+        <p>Publicaciones</p>
+      </ion-col>
+      <ion-col>
+        <h3>{{ user.followers }}</h3>
+        <p>Seguidores</p>
+      </ion-col>
+      <ion-col>
+        <h3>{{ user.following }}</h3>
+        <p>Seguidos</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-button mode="ios" expand="full">Editar perfil</ion-button>
+  <ion-button expand="full" fill="outline">Compartir perfil</ion-button>
+
+  <div class="stories">
+    <div *ngFor="let story of stories" class="story">
+      <img [src]="story.image" class="story-img" />
+      <p>{{ story.title }}</p>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,50 @@
+
+  <ion-searchbar placeholder="Buscar"></ion-searchbar>
+
+  <ion-list>
+    <ion-item-divider>
+      <ion-label>Tu cuenta</ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+      <ion-label>
+        <h2>Centro de cuentas</h2>
+        <p>Contraseña, seguridad, datos personales, preferencias de anuncios</p>
+      </ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+
+    <ion-item-divider>
+      <ion-label>Cómo usas Instagram</ion-label>
+    </ion-item-divider>
+    <ion-item *ngFor="let option of options">
+      <ion-icon slot="start" [name]="option.icon"></ion-icon>
+      <ion-label>{{ option.name }}</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+
+    <ion-item-divider>
+      <ion-label>Quién puede ver tu contenido</ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+      <ion-label>
+        <h2>Privacidad de la cuenta</h2>
+        <p>Pública</p>
+      </ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="star-outline"></ion-icon>
+      <ion-label>
+        <h2>Mejores amigos</h2>
+        <p>12</p>
+      </ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="repeat-outline"></ion-icon>
+      <ion-label>Publicaciones cruzadas</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+  </ion-list>
