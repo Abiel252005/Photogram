@@ -1,4 +1,3 @@
-/* Define CSS variables for light and dark mode */
 :root {
     --background-color: white;
     --text-color: #333;
@@ -8,15 +7,14 @@
     --modal-text-color: white;
 }
 
-/* Dark mode adjustments */
 @media (prefers-color-scheme: dark) {
     :root {
-        --background-color: #1a1a1a; /* Dark background */
-        --text-color: #e0e0e0; /* Light text */
-        --border-color: #444; /* Darker border */
-        --modal-bg: rgba(0, 0, 0, 0.95); /* Slightly darker modal overlay */
-        --story-border: #1a1a1a; /* Darker border for story images */
-        --modal-text-color: #e0e0e0; /* Light text in modal */
+        --background-color: #1a1a1a; 
+        --text-color: #e0e0e0;
+        --border-color: #444;
+        --modal-bg: rgba(0, 0, 0, 0.95);
+        --story-border: #1a1a1a;
+        --modal-text-color: #e0e0e0;
     }
 }
 

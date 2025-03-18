@@ -13,20 +13,19 @@
     --focus-border: #007bff;
 }
 
-/* Dark mode adjustments */
 @media (prefers-color-scheme: dark) {
     :root {
-        --post-bg: #2a2a2a; /* Dark background for posts */
-        --post-shadow: rgba(0, 0, 0, 0.3); /* Darker shadow */
-        --border-color: #444; /* Darker borders */
-        --text-bold: #e0e0e0; /* Light text for bold elements */
-        --text-description: #c0c0c0; /* Light gray for description */
-        --text-time: #999; /* Lighter gray for time */
-        --img-border: #555; /* Darker border for images */
-        --comment-bg: #333; /* Darker comment section */
-        --input-border: #555; /* Darker input border */
-        --input-bg: #3a3a3a; /* Dark input background */
-        --focus-border: #1e90ff; /* Slightly lighter blue for focus */
+        --post-bg: #2a2a2a;
+        --post-shadow: rgba(0, 0, 0, 0.3);
+        --border-color: #444;
+        --text-bold: #e0e0e0;
+        --text-description: #c0c0c0;
+        --text-time: #999;
+        --img-border: #555
+        --comment-bg: #333;
+        --input-border: #555;
+        --input-bg: #3a3a3a;
+        --focus-border: #1e90ff;
     }
 }
 
@@ -76,7 +75,7 @@
 }
 
 .post-actions ion-icon:hover {
-    color: #e63946; /* Keep this as is; it works in both modes */
+    color: #e63946;
     transform: scale(1.1);
 }
 
@@ -119,7 +118,7 @@
     border-radius: 5px;
     background: var(--input-bg);
     transition: border 0.3s, background 0.3s;
-    color: var(--text-description); /* Ensure text is readable */
+    color: var(--text-description);
 }
 
 .comment-input input:focus {
