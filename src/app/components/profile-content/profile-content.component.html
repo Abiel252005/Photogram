@@ -1,5 +1,3 @@
-
-
 <ion-content mode="ios" fullscreen="true">
   <div class="profile-header">
     <img [src]="user.profilePicture" class="profile-picture" />
@@ -26,10 +24,18 @@
     </ion-row>
   </ion-grid>
 
-  <ion-button mode="ios" expand="full">Editar perfil</ion-button>
-  <ion-button expand="full" fill="outline">Compartir perfil</ion-button>
+  <div class="profile-buttons">
+    <ion-button mode="ios" expand="full">Editar perfil</ion-button>
+    <ion-button expand="full" fill="outline">Compartir perfil</ion-button>
+  </div>
 
   <div class="stories">
+    <div class="story">
+      <div class="story-add">
+        <ion-icon name="add-circle-outline" size="large"></ion-icon>
+        <p>Nuevo</p>
+      </div>
+    </div>
     <div *ngFor="let story of stories" class="story">
       <img [src]="story.image" class="story-img" />
       <p>{{ story.title }}</p>

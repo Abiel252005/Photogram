@@ -1,43 +1,219 @@
+:root {
+    --bg-color: #fff;
+    --text-primary: #000;
+    --text-secondary: #8e8e8e;
+    --border-color: #dbdbdb;
+    --button-bg: #0095f6;
+    --button-text: #fff;
+    --button-outline-bg: transparent;
+    --button-outline-border: #dbdbdb;
+    --button-outline-text: #000;
+    --gradient-start: #f58529;
+    --gradient-end: #515bd4;
+}
+
+ion-content {
+    --background: var(--bg-color);
+    --padding-top: 10px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 15px 20px;
+    background: var(--bg-color);
+}
+
 .profile-picture {
-    width: 80px;
-    height: 80px;
+    width: 77px;
+    height: 77px;
     border-radius: 50%;
-    border: 2px solid gray;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    padding: 2px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.profile-picture:hover {
+    transform: scale(1.05);
+}
+
+.profile-info {
+    flex: 1;
 }
 
 .profile-info h2 {
     margin: 0;
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.2;
 }
 
 .profile-info p {
-    margin: 4px 0;
-    color: gray;
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: var(--text-primary);
+    line-height: 1.4;
+    white-space: pre-wrap;
 }
 
 ion-grid {
+    padding: 0 20px;
+    margin: 10px 0;
+}
+
+ion-row {
+    display: flex;
+    justify-content: space-between;
     text-align: center;
+    padding: 0 10px;
+}
+
+ion-col {
+    flex: 1;
+    padding: 0;
+}
+
+ion-col h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+ion-col p {
+    margin: 2px 0 0;
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-transform: lowercase;
+}
+
+.profile-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    padding: 0 20px;
     margin-top: 10px;
 }
 
 ion-button {
-    margin: 8px;
+    --border-radius: 5px;
+    --padding-start: 0;
+    --padding-end: 0;
+    --height: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: none;
+    transition: opacity 0.2s ease;
+    flex: 1;
+}
+
+ion-button[fill="solid"] {
+    --background: var(--button-bg);
+    --color: var(--button-text);
+}
+
+ion-button[fill="outline"] {
+    --background: var(--button-outline-bg);
+    --border: 1px solid var(--button-outline-border);
+    --color: var(--button-outline-text);
+}
+
+ion-button:hover {
+    opacity: 0.9;
 }
 
 .stories {
     display: flex;
     overflow-x: auto;
-    padding: 10px;
+    padding: 10px 20px;
+    gap: 10px;
+    background: var(--bg-color);
+    scrollbar-width: none;
+}
+
+.stories::-webkit-scrollbar {
+    display: none;
+}
+
+.stories::before {
+    display: block;
+    width: 100%;
+    padding: 5px 20px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-align: left;
 }
 
 .story {
     text-align: center;
-    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.story-add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.story-add ion-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 56px;
+    color: var(--border-color);
+}
+
+.story-add::after {
+    position: absolute;
+    top: 38px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-primary);
+    background: var(--bg-color);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--border-color);
+}
+
+.story-add p {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 5px;
 }
 
 .story-img {
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
-    border: 2px solid gray;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    padding: 2px;
+    transition: transform 0.2s ease;
+}
+
+.story-img:hover {
+    transform: scale(1.1);
+}
+
+.story p {
+    font-size: 12px;
+    color: var(--text-primary);
+    margin-top: 5px;
+    max-width: 56px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

@@ -6,7 +6,7 @@
   <img [src]="post.image" alt="Imagen de {{ post.username }}">
   <div class="post-actions">
     <ion-icon 
-      [name]="post.liked ? 'heart' : 'heart-outline'" 
+      [name]="post.liked ? 'heart' : 'heart-outline'"
       (click)="likePost(post)">
     </ion-icon>
     <ion-icon name="chatbubble-outline"></ion-icon>
