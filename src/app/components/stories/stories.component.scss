@@ -1,10 +1,32 @@
+/* Define CSS variables for light and dark mode */
+:root {
+    --background-color: white;
+    --text-color: #333;
+    --border-color: #ddd;
+    --modal-bg: rgba(0, 0, 0, 0.9);
+    --story-border: white;
+    --modal-text-color: white;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #1a1a1a; /* Dark background */
+        --text-color: #e0e0e0; /* Light text */
+        --border-color: #444; /* Darker border */
+        --modal-bg: rgba(0, 0, 0, 0.95); /* Slightly darker modal overlay */
+        --story-border: #1a1a1a; /* Darker border for story images */
+        --modal-text-color: #e0e0e0; /* Light text in modal */
+    }
+}
+
 .stories-container {
     display: flex;
     overflow-x: auto;
     padding: 10px;
-    background-color: white;
+    background-color: var(--background-color);
     gap: 15px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .story {
@@ -20,12 +42,12 @@
     object-fit: cover;
     padding: 4px;
     background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
-    border: 3px solid white;
+    border: 3px solid var(--story-border);
 }
 
 .story p {
     font-size: 14px;
-    color: #333;
+    color: var(--text-color);
     margin-top: 5px;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -39,7 +61,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: var(--modal-bg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,7 +91,7 @@
 }
 
 .story-view p {
-    color: white;
+    color: var(--modal-text-color);
     font-size: 18px;
     margin-top: 10px;
 }
@@ -78,15 +100,12 @@
     0% {
         border: 5px solid #f58529;
     }
-
     25% {
         border: 5px solid #dd2a7b;
     }
-
     50% {
         border: 5px solid #8134af;
     }
-
     100% {
         border: 5px solid #515bd4;
     }

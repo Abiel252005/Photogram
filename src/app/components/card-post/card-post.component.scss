@@ -1,9 +1,41 @@
+/* Define CSS variables for light and dark mode */
+:root {
+    --post-bg: #fff;
+    --post-shadow: rgba(0, 0, 0, 0.1);
+    --border-color: #eee;
+    --text-bold: #333;
+    --text-description: #444;
+    --text-time: #777;
+    --img-border: #ddd;
+    --comment-bg: #f9f9f9;
+    --input-border: #ddd;
+    --input-bg: #fff;
+    --focus-border: #007bff;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --post-bg: #2a2a2a; /* Dark background for posts */
+        --post-shadow: rgba(0, 0, 0, 0.3); /* Darker shadow */
+        --border-color: #444; /* Darker borders */
+        --text-bold: #e0e0e0; /* Light text for bold elements */
+        --text-description: #c0c0c0; /* Light gray for description */
+        --text-time: #999; /* Lighter gray for time */
+        --img-border: #555; /* Darker border for images */
+        --comment-bg: #333; /* Darker comment section */
+        --input-border: #555; /* Darker input border */
+        --input-bg: #3a3a3a; /* Dark input background */
+        --focus-border: #1e90ff; /* Slightly lighter blue for focus */
+    }
+}
+
 .posts {
     margin: 20px auto;
     max-width: 600px;
-    background: #fff;
+    background: var(--post-bg);
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px var(--post-shadow);
     overflow: hidden;
 }
 
@@ -12,7 +44,7 @@
     align-items: center;
     gap: 10px;
     padding: 15px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .post-header img {
@@ -20,13 +52,13 @@
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #ddd;
+    border: 2px solid var(--img-border);
 }
 
 .post-header p {
     font-weight: bold;
     font-size: 14px;
-    color: #333;
+    color: var(--text-bold);
 }
 
 .post-actions {
@@ -34,7 +66,7 @@
     align-items: center;
     gap: 20px;
     padding: 10px 15px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--border-color);
 }
 
 .post-actions ion-icon {
@@ -44,7 +76,7 @@
 }
 
 .post-actions ion-icon:hover {
-    color: #e63946;
+    color: #e63946; /* Keep this as is; it works in both modes */
     transform: scale(1.1);
 }
 
@@ -56,38 +88,41 @@
     padding: 5px 15px;
     font-weight: bold;
     font-size: 14px;
+    color: var(--text-bold);
 }
 
 .description {
     padding: 0 15px 10px;
     font-size: 14px;
     line-height: 1.5;
-    color: #444;
+    color: var(--text-description);
 }
 
 .time {
     padding: 5px 15px;
     font-size: 12px;
-    color: #777;
+    color: var(--text-time);
 }
 
 .comment-input {
     padding: 10px 15px;
-    border-top: 1px solid #eee;
-    background: #f9f9f9;
+    border-top: 1px solid var(--border-color);
+    background: var(--comment-bg);
 }
 
 .comment-input input {
     width: 100%;
-    border: 1px solid #ddd;
+    border: 1px solid var(--input-border);
     outline: none;
     padding: 10px;
     font-size: 14px;
     border-radius: 5px;
+    background: var(--input-bg);
     transition: border 0.3s, background 0.3s;
+    color: var(--text-description); /* Ensure text is readable */
 }
 
 .comment-input input:focus {
-    border-color: #007bff;
-    background: #fff;
+    border-color: var(--focus-border);
+    background: var(--input-bg);
 }
