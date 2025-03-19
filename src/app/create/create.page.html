@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nueva publicación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="image-container" *ngIf="imagenPreview">
+    <img [src]="imagenPreview" alt="Vista previa de la imagen" />
+  </div>
+
+  <ion-item>
+    <ion-textarea placeholder="Agrega un pie de foto..." [(ngModel)]="caption"></ion-textarea>
+  </ion-item>
+
+  <ion-list>
+    <ion-item button (click)="agregarUbicacion()">
+      <ion-icon name="location-outline" slot="start"></ion-icon>
+      <ion-label>Agregar ubicación</ion-label>
+      <ion-text *ngIf="ubicacion">{{ ubicacion }}</ion-text>
+    </ion-item>
+
+    <ion-item button (click)="etiquetarPersonas()">
+      <ion-icon name="person-add-outline" slot="start"></ion-icon>
+      <ion-label>Etiquetar personas</ion-label>
+      <ion-text *ngIf="etiquetados.length > 0">{{ etiquetados.join(', ') }}</ion-text>
+    </ion-item>
+
+    <ion-item button (click)="openMusicModal()">
+      <ion-icon name="musical-notes" slot="start"></ion-icon>
+      <ion-label>Agregar música</ion-label>
+      <ion-text *ngIf="selectedMusic">{{ selectedMusic.name }} - {{ selectedMusic.artist }}</ion-text>
+    </ion-item>
+  </ion-list>
+
+  <div class="upload-section">
+    <input type="file" (change)="cargarImagen($event)" accept="image/*" />
+  </div>
+
+  <ion-button expand="full" (click)="publicarPost()">Compartir</ion-button>
+</ion-content>

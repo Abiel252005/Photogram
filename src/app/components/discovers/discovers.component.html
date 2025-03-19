@@ -1,0 +1,29 @@
+<ion-toolbar>
+  <ion-searchbar mode="ios" placeholder="Buscar" class="custom-searchbar"></ion-searchbar>
+</ion-toolbar>
+
+<ion-content class="custom-content" fullscreen="true">
+  <ion-row>
+    <ion-col size="6" *ngFor="let item of media" class="media-col">
+      <ion-card class="media-card" (click)="openMedia(item)">
+        <ng-container *ngIf="item.type === 'image'; else videoTemplate">
+          <ion-img [src]="item.url" class="media"></ion-img>
+        </ng-container>
+        <ng-template #videoTemplate>
+          <video class="media" [src]="item.url" muted></video>
+        </ng-template>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+<div *ngIf="selectedMedia" class="modal-overlay" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <ng-container *ngIf="selectedMedia.type === 'image'; else videoModalTemplate">
+      <img [src]="selectedMedia.url" alt="Imagen seleccionada">
+    </ng-container>
+    <ng-template #videoModalTemplate>
+      <video [src]="selectedMedia.url" controls autoplay></video>
+    </ng-template>
+  </div>
+</div>

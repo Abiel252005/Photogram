@@ -1,0 +1,15 @@
+ion-item {
+    --padding-start: 15px;
+    --inner-padding-end: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  ion-label {
+    flex-grow: 1;
+  }
+  
+  ion-button {
+    margin-left: 10px;
+  }
+  

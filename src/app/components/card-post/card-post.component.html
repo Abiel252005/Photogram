@@ -1,0 +1,23 @@
+<div class="posts" *ngFor="let post of users">
+  <div class="post-header">
+    <img [src]="post.avatar" alt="{{ post.username }}">
+    <p>{{ post.username }} • {{ post.location }}</p>
+  </div>
+  <img [src]="post.image" alt="Imagen de {{ post.username }}">
+  <div class="post-actions">
+    <ion-icon 
+      [name]="post.liked ? 'heart' : 'heart-outline'" 
+      (click)="likePost(post)">
+    </ion-icon>
+    <ion-icon name="chatbubble-outline"></ion-icon>
+    <ion-icon name="paper-plane-outline"></ion-icon>
+  </div>
+  <p class="likes">{{ post.likes }} Me gusta</p>
+  <p class="description">
+    <b>{{ post.username }}</b> {{ post.caption }}
+  </p>
+  <p class="time">{{ post.time }}</p>
+  <div class="comment-input">
+    <input type="text" placeholder="Escribe un comentario...">
+  </div>
+</div>
